@@ -1,111 +1,135 @@
 <!DOCTYPE html>
-<html lang="en"  data-theme="dark">
-  <head> <!-- lista med barn -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Stefans Exempel</title>
-    <link rel="shortcut icon" href="https://picocss.com/favicon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-
-  </head>
-
-  <body>
-    <!-- Header -->
-    <header class="container">
-      <hgroup>
-        <h1>Hederlige Harrys Bilaktioner</h1>
-        
-        <img src="likenew.jpg"/>
-      </hgroup>
-    </header>
-    <!-- ./ Header -->
-
-   
-
-
-
-    <!-- Main -->
-    <main class="container">
-      <section id="test2">
-        
-    <!-- Preview -->
-    <section id="preview">
-      <h2 id="testPreview">Lägga bud</h2>
-      <p>
-        Lägg bud NU annars skickar jag Svarte Petter på er
-      </p>
-      <form>
-        <div class="grid">
-          <input
-            type="text"
-            name="firstname"
-            placeholder="First name"
-            aria-label="First name"
-            required
-          />
-          <input
-            type="number"
-            name="amount"
-            placeholder="Belopp"
-            aria-label="Belopp"
-            required
-          />
-          <button type="submit">Lägg bud</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="siteheader">
+        <div class="logo">
+            <i class='bx bxs-car logoicon'></i>
+            Car<span class="logopart2">Lovers</span>                
         </div>
-     
-      </form>
-    </section>
-    <!-- ./ Preview -->
+        <nav>
+            <ul class="navmenu">
+                <li><a class="headeranchor" href="#home">Start</a></li>
+                <li><a class="headeranchor" href="#products">Bilar</a></li>
+                <li><a class="headeranchor" href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+        <ul class="navicons">
+           <li><a class="navicons__headeranchor" href="#"><i class='bx bx-search-alt'></i></a></li> 
+           <li><a class="navicons__headeranchor" href="#"><i class='bx bx-menu' ></i></a></li> 
+        </ul>
+    </header>
+    <main>
+        <section class="home" id="home">
+            <div class="home__content">
+                <h1>HEDERLIGE HARRYS BILAUKTIONER</h1>
+                <h2>En bra affär - för mig!</h2>
+                <p class="salesparagraf">
+                    Du kan lita på mig!<br />
+                    Ser jag ut som nån som ljuger eller?</p>
+                <a class="ctabutton" href="#products">Våra annonser</a>
+            </div>
+        </section>
 
 
-<table role="grid" id="allPlayers">
-<thead>
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col">Amount</th>
+        <section class="products" id="products">
+            <h1>Bilarna</h1>
+            <div class="productgallery" id="productgallery">
+                <!-- <div class="productcard">
+                        <img src="https://axmjqhyyjpat.objectstorage.eu-amsterdam-1.oci.customer-oci.com/n/axmjqhyyjpat/b/randomimages/o/cars%2F11.png">
+                        <div class="information">
+                            <div class="name">Nissan GT-R</div>
+                            <div class="description">2022</div>
+                            <a class="ctabutton" href="#">100 000 kr</a>
+                        </div>
+                </div>
 
-  </tr>
-</thead>
-<tbody>
-  <!-- <tr data-id="1"><th scope="row">Peter Forsberg</th><td>21</td><td>Forward</td><td>Colorado</td></tr><tr data-id="2"><th scope="row">Mats Sundin</th><td>13</td><td>Forward</td><td>Toronto</td></tr><tr data-id="3"><th scope="row">Niklas Lidström</th><td>5</td><td>Defence</td><td>Detroit</td></tr><tr data-id="4"><th scope="row">Mikko Rantanen</th><td>96</td><td>Forward</td><td>Colorado</td></tr><tr data-id="5"><th scope="row">Jack Johnson</th><td>3</td><td>Defence</td><td>Colorado</td></tr> -->
-</tbody>
-</table>
-<br>
-<br><br><br><br>
+                <div class="productcard">
+                    <img src="https://axmjqhyyjpat.objectstorage.eu-amsterdam-1.oci.customer-oci.com/n/axmjqhyyjpat/b/randomimages/o/cars%2F2.png">
+                    <div class="information">
+                        <div class="name">Ford Egde</div>
+                        <div class="description">2023</div>
+                        <a class="ctabutton" href="#">150 000 kr</a>
+                    </div>
+            </div>
 
-<hr>
+                <div class="productcard">
+                    <img src="https://axmjqhyyjpat.objectstorage.eu-amsterdam-1.oci.customer-oci.com/n/axmjqhyyjpat/b/randomimages/o/cars%2F13.png">
+                    <div class="information">
+                        <div class="name">Kia Forte</div>
+                        <div class="description">2019</div>
+                        <a class="ctabutton" href="#">300 000 kr</a>
+                    </div>
+            </div> -->
 
-      </section>
-  
+            <!-- </div> -->
 
 
+            </div>
+
+        </section>
 
 
+        <section class="contact" id="contact" style="display:none;">
+            <h1 id="selectedCarName">Contact us</h1>
+            <div class="contact__content">
+                <div class="contact__map">
+                    <img id="selectedCarImg">
+                </div>
+                <div class="contact__form">
+                    <form action="">
+                        <div class="contact__form__box">
+                            <i class="bx bx-user"></i>
+                            <input id="name"class="contact__form__box__input"  type="text" placeholder="name">
+                        </div>    
+                        <div class="contact__form__box">
+                            <i class="bx bx-money"></i>
+                            <input id="amount" class="contact__form__box__input" type="number" placeholder="Bid">
+                        </div>    
+                        <a href="#" class="ctabutton" id="buttonBid">BID!</a> 
+                    </form>
+                </div>
+            </div>
+            <div>
+              <div class="contact__content">
+                <h2>Aktuella bud</h2>
+              </div>
+                <div class="contact__content">
+              <table >
+                <thead>
+                <tr>
+                  <th>Name</tdh>
+                  <th>Bid</th>
+                </tr>
+            </thead>
+            <tbody id="bids">
+                <tr>
+                  <td>Stefan</tdh>
+                  <td>120</th>
+                </tr>
+                <tr>
+                  <td>Kalle</td>
+                  <td>130</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
 
-
-      
+        </section>
 
 
     </main>
-    <!-- ./ Main -->
-
-    <!-- Footer -->
-    <footer class="container">
-      <small
-        >Built with <a href="https://picocss.com">Pico</a> •
-        <a href="https://github.com/picocss/examples/blob/master/v1-basic-template/"
-          >Source code</a
-        ></small
-      >
+    <footer>
+        (C) Stefan
     </footer>
-    <!-- ./ Footer -->
-
-
-
-
-
-
-
-  <script src="script.js"></script>
-  </body>
+    <script src="script.js" type="module"></script>
+</body>
 </html>

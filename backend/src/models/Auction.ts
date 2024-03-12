@@ -1,10 +1,10 @@
 import { Bid } from "./Bid";
 
-export type Product = {
+export type Auction = {
   id: string;
   name: string;
-  description: string;
-  price: number;
+  year: number;
+  img:string;
   highestBid: number;
   highestBidder: string;
   bids: Bid[];
