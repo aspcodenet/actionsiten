@@ -72,6 +72,7 @@ const io = new Server(server, { cors: { origin: "*" } });
    console.log("a user connected");
    //placebid är ett EVENT som vi och kliebnten  kommer överens om
    socket.on("placebid", (bid: Bid) => {
+    
 //    console.log(bid);
     //console.log(actions)
     //console.log(actions[1].id , bid.auctionId)
@@ -89,8 +90,7 @@ const io = new Server(server, { cors: { origin: "*" } });
  
   // socket.emit(
   //   "auctions",
-  //   actions.map((p) => {
-  //     return { id: p.id, name: p.name };
+  //   actions
   //   })
   // );
 
