@@ -92,20 +92,20 @@ io.on("connection", (socket) => {
   // });
 
   // Callback är den funktion som skickas med i händelsen från klienten
-  socket.on("placebid", (bid: Bid) => {
-    console.log(bid);
-    //console.log(actions)
-    console.log(actions[1].id , bid.auctionId)
-    const product = actions.find((p) => p.id == bid.auctionId);
-    console.log(product)
-    product?.bids.push(bid);
+//   socket.on("placebid", (bid: Bid) => {
+//     console.log(bid);
+//     //console.log(actions)
+//     console.log(actions[1].id , bid.auctionId)
+//     const product = actions.find((p) => p.id == bid.auctionId);
+//     console.log(product)
+//     product?.bids.push(bid);
 
-    io.emit(
-      "newbid",
-      actions.find((p) => p.id === bid.auctionId)
-    );
-  });
-});
+//     io.emit(
+//       "newbid",
+//       actions.find((p) => p.id === bid.auctionId)
+//     );
+//   });
+// });
 
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
