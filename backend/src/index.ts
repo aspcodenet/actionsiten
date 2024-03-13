@@ -65,11 +65,28 @@ app.get("/", (req, res) => {
 });
 
 const server = createServer(app);
-//const io = new Server(server, { cors: { origin: "*" } });
+const io = new Server(server, { cors: { origin: "*" } });
 
-// io.on("connection", (socket) => {
-//   console.log("a user connected");
+//socket är den unika kommunikationslänken  - dvs unik per person
+ io.on("connection", (socket) => {
+   console.log("a user connected");
+   //placebid är ett EVENT som vi och kliebnten  kommer överens om
+   socket.on("placebid", (bid: Bid) => {
+//    console.log(bid);
+    //console.log(actions)
+    //console.log(actions[1].id , bid.auctionId)
+    const auction = actions.find((p) => p.id === bid.auctionId);
+    console.log(auction)
+    auction?.bids.push(bid);
 
+    // EMIT = ropa till alla : NÅN HAR LAGT ETT NYTT BUD
+    io.emit(
+      "newbid",
+      auction
+    );
+  });
+});
+ 
   // socket.emit(
   //   "auctions",
   //   actions.map((p) => {
@@ -92,20 +109,6 @@ const server = createServer(app);
   // });
 
   // Callback är den funktion som skickas med i händelsen från klienten
-//   socket.on("placebid", (bid: Bid) => {
-//     console.log(bid);
-//     //console.log(actions)
-//     console.log(actions[1].id , bid.auctionId)
-//     const product = actions.find((p) => p.id == bid.auctionId);
-//     console.log(product)
-//     product?.bids.push(bid);
-
-//     io.emit(
-//       "newbid",
-//       actions.find((p) => p.id === bid.auctionId)
-//     );
-//   });
-// });
 
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

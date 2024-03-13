@@ -1,5 +1,5 @@
-// import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
-// const socket = io("http://localhost:3000");
+import { io } from "https://cdn.socket.io/4.7.4/socket.io.esm.min.js";
+const socket = io("http://localhost:3000");
 
 const gallery = document.getElementById('productgallery')
 const selectedCarName = document.getElementById('selectedCarName')
@@ -89,22 +89,22 @@ function showCar(car){
 
 buttonBid.addEventListener("click",(ev)=>{
     ev.preventDefault()
-    // socket.emit("placebid", { auctionId:currentCar.id,
-    //                                          amount: Number(amount.value),
-    //                                          name:   name.value 
-    // });
+    socket.emit("placebid", { auctionId:currentCar.id,
+                                             amount: Number(amount.value),
+                                             name:   name.value 
+    });
 })
 
 let cars = await (await fetch('http://localhost:3000/api/auctions')).json()
 updateCars()
 
-// socket.on("newbid", auction => {
-//     cars.forEach((car, i) => { if (car.id == auction.id) cars[i] = car; });
-//     if(currentCar.id == auction.id){
-//         currentCar = auction
-//     }
-//     refreshBids()
-//   });
+socket.on("newbid", auction => {
+    cars.forEach((car, i) => { if (car.id == auction.id) cars[i] = car; });
+    if(currentCar.id == auction.id){
+        currentCar = auction
+    }
+    refreshBids()
+  });
 
 
 
